@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    background: #212121;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+    margin:0;
+    font-family: "Inter", sans-serif;
+}
+
+#game-board {
+    border-radius: 50px;
+    display:grid;
+    grid-template-columns: repeat(30, 15px);
+    grid-template-rows: repeat(30, 15px);
+    margin:5px;
+}
+
+.game-br1 {
+    border:#fff solid 10px;
+    border-radius:20px;
+    box-shadow:inset 0 0 0 10px #ddd;
+    background:#111;
+}
+.game-br2 {
+    border:#ddd solid 5px;
+    border-radius:20px;
+    box-shadow:inset 0 0 0 5px #aaa;
+    background:#111;
+}
+
+
+#instruction {
+    position: absolute;
+    top:60%;
+    color:#fff;
+    width: 300px;
+    text-align:center;
+    text-transform: capitalize;
+    padding:30px;
+    margin:0;
+}
+
+.scores {
+    display:flex;
+    justify-content: space-between;
+}
+
+#score, #highscore {
+    font-size: 30px;
+    font-weight:700;
+    margin:10px 0;
+}
+
+#highscore {
+    display:none;
+}
+
+.snake {
+    border:#ddd 1px dotted;
+    background:#ddd;
+}
+
+.food {
+    background-color:greenyellow;
+    border:green 5px solid;
+}
+
