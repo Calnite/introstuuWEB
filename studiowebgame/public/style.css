@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 body {
     background: #212121;
-    color:#fff;
+    color:#d9d9d9;
     display:flex;
     align-items:center;
     justify-content: center;
     height:100vh;
     margin:0;
-    font-family: "Inter", sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
 }
 
 #game-board {
@@ -20,26 +21,24 @@ body {
 }
 
 .game-br1 {
-    border:#fff solid 10px;
-    border-radius:20px;
-    box-shadow:inset 0 0 0 10px #ddd;
+    border:#7209b7 solid 5px;
+    box-shadow: 5px 5px 50px 0 rgba(0,0,0,.5);
     background:#111;
 }
 .game-br2 {
-    border:#ddd solid 5px;
-    border-radius:20px;
-    box-shadow:inset 0 0 0 5px #aaa;
+    border:#f72585 solid 5px;
+    box-shadow:inset 0 0 0 5px #7209b7;
     background:#111;
 }
 
 
 #instruction {
     position: absolute;
-    top:60%;
-    color:#fff;
+    top:45%;
+    color:#d9d9d9; 
     width: 300px;
     text-align:center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     padding:30px;
     margin:0;
 }
@@ -51,7 +50,6 @@ body {
 
 #score, #highscore {
     font-size: 30px;
-    font-weight:700;
     margin:10px 0;
 }
 
@@ -65,7 +63,7 @@ body {
 }
 
 .food {
-    background-color:greenyellow;
-    border:green 5px solid;
+    background-color:#a7c957;
+    border:#6a994e 5px solid;
 }
 

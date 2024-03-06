@@ -11,6 +11,9 @@ let app = express();
 const server = createServer(app);
 const io = new Server(server);
 
+const sockets = await io.in(`user:${userId}`).fetchSockets();
+const isUserConnected = sockets.length > 0;
+
 // get the directory where server.js is located
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,6 +28,10 @@ app.use(express.static('public'));
 // a client has connected
 io.on('connection', (socket) => {
     console.log('a client connected');
+
+    const userId = socket.request.user.id;
+    // the user ID is used as a room
+    socket.join(`user:${userId}`);
 
     // send a welcome message to the client
     socket.emit('msg', "welcome from the server");

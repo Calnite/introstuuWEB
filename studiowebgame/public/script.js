@@ -1,8 +1,11 @@
+var audio = new Audio('LISAOST.mp3');
+audio.volume = 0.3;
+
 //html elm
 const board = document.getElementById('game-board');
-const instruction = document.getElementById ('instruction')
+const instruction = document.getElementById ('instruction');
 const score = document.getElementById('score');
-const highScoreText = document.getElementById('highScore');
+const highScoreText = document.getElementById('highscore');
 
 // variables
 const gridSize = 30;
@@ -23,11 +26,13 @@ function draw() {
 }
 
 function drawSnake() {
+  if (gameStarted) {
     snake.forEach((segment) => {
         const snakeElement = createGameElement('div', 'snake');
         setPosition(snakeElement, segment);
         board.appendChild(snakeElement);
     });
+  }
 }
 
 function createGameElement(tag, className) {
@@ -42,9 +47,11 @@ function setPosition(element, position) {
 }
 
 function drawFood() {
+  if (gameStarted) {
     const foodElement = createGameElement('div', 'food');
     setPosition(foodElement, food);
     board.appendChild(foodElement);
+  }
 }
 
 function generateFood() {
@@ -96,6 +103,7 @@ function move() {
 
 //start game
 function startGame() {
+  audio.play();
     gameStarted = true;
     instruction.style.display = 'none';
     gameInterval = setInterval(() => {
@@ -188,4 +196,4 @@ function increaseSpeed() {
     highScoreText.style.display = 'block';
   }
 
-console.log();
+console.log(checkCollision);
